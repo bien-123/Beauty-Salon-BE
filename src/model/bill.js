@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const billSchema = new Schema(
     {
-        maKH: { type: String },
+        maKH: { type: Array },
         tenKH: { type: String },
         maDV: { type: Array },
-        tenDV: { type: Array },
+        tenDV: { type: String },
+        loaiKH: { type: String },
         gia: { type: Number },
         sale: { type: String },
         tongTien: { type: String },
