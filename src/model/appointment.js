@@ -8,6 +8,7 @@ var Appointment = new Schema(
         tinhTrangHienTai: { type: String },
         ngayHen: { type: String },
         gioHen: { type: String },
+        name: { type: Array },
         status: { type: String },
         result: { type: String },
     },
