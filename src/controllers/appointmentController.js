@@ -56,6 +56,30 @@ const appointmentController = {
             res.status(500).json({ error: err.message }); //HTTP REQUEST CODE
         }
     },
+
+    searchWelcome: async (req, res) => {
+        const query = req.query.q;
+        try {
+            const results = await Appointment.find({
+                $and: [
+                    // Sử dụng $and để kết hợp các điều kiện
+                    {
+                        $or: [
+                            { tenKH: { $regex: query, $options: 'i' } },
+                            { sdt: { $regex: query, $options: 'i' } },
+                            { ngayHen: { $regex: query, $options: 'i' } },
+                            { result: { $regex: query, $options: 'i' } },
+                        ],
+                    },
+                    { result: 'Thành công' },
+                    { status: 'Đã xác nhận' },
+                ],
+            }).sort({ updatedAt: -1 }); // Sắp xếp theo updatedAt từ mới đến cũ (theo thứ tự giảm dần)
+            res.status(200).json(results);
+        } catch (err) {
+            res.status(500).json({ error: err.message });
+        }
+    },
 };
 
 module.exports = appointmentController;

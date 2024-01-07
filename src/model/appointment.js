@@ -11,6 +11,7 @@ var Appointment = new Schema(
         name: { type: Array },
         status: { type: String },
         result: { type: String },
+        phanCong: { type: Array },
     },
     {
         timestamps: true,

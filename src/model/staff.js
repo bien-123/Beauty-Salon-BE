@@ -8,6 +8,7 @@ const staffSchema = new Schema(
         ngaySinh: { type: String },
         gioiTinh: { type: String },
         chucVu: { type: String },
+        khoa: { type: String },
         soDienThoai: { type: String },
         email: { type: String },
         diaChi: { type: String },

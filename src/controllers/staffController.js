@@ -146,6 +146,7 @@ const staffController = {
                 ngaySinh: result.ngaySinh,
                 gioiTinh: result.gioiTinh,
                 chucVu: result.chucVu,
+                khoa: result.khoa,
                 soDienThoai: result.soDienThoai,
                 email: result.email,
                 diaChi: result.diaChi,
