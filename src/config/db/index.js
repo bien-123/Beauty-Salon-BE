@@ -9,6 +9,7 @@ async function connect() {
         await mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            dbName: 'BeautySalon',
             // useCreateIndex: true,
         });
         console.log('Connect successfully!!!');
