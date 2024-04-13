@@ -8,5 +8,6 @@ router.get('/', serviceController.getService);
 router.put('/update/:id', serviceController.updateService);
 router.delete('/delete/:id', serviceController.deleteService);
 router.get('/search', serviceController.searchService);
+router.get('/searchp', serviceController.searchPaginationService);
 router.get('/searchbill', serviceController.getServiceBill);
 module.exports = router;
