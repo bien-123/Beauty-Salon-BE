@@ -10,6 +10,9 @@ const route = require('./routers/index');
 const db = require('./config/db/index.js');
 const port = process.env.PORT;
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
+
 //CONNECT DATABASE
 db.connect();
 
@@ -23,5 +26,7 @@ route(app);
 app.get('/', function (req, res) {
     res.send('This is Server!');
 });
+
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
