@@ -7,11 +7,11 @@ const options = {
             title: 'Beauty Salon API',
             version: '1.0.0',
         },
-        servers: [
-            {
-                url: 'http://localhost:5000',
-            },
-        ],
+        // servers: [
+        //     {
+        //         url: 'http://localhost:5000',
+        //     },
+        // ],
     },
     apis: ['./src/routers/*.js'],
 };
