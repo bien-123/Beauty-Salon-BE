@@ -113,24 +113,24 @@ const serviceController = {
         }
     },
 
-    getServiceBill: async (req, res) => {
-        try {
-            const allServices = await Service.find();
+    // getServiceBill: async (req, res) => {
+    //     try {
+    //         const allServices = await Service.find();
 
-            const arr = allServices.map((service) => ({
-                maDV: service.maDV,
-                name: service.name,
-                price: service.price,
-            }));
+    //         const arr = allServices.map((service) => ({
+    //             maDV: service.maDV,
+    //             name: service.name,
+    //             price: service.price,
+    //         }));
 
-            res.status(200).json({
-                status: true,
-                arr,
-            });
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    },
+    //         res.status(200).json({
+    //             status: true,
+    //             arr,
+    //         });
+    //     } catch (err) {
+    //         res.status(500).json(err);
+    //     }
+    // },
 };
 
 module.exports = serviceController;

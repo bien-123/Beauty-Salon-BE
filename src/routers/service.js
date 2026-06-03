@@ -87,16 +87,16 @@ router.get('/search', serviceController.searchService);
  */
 router.get('/searchp', serviceController.searchPaginationService);
 
-/**
- * @swagger
- * /service/searchbill:
- *   get:
- *     summary: Get service bill data
- *     tags: [Service]
- *     responses:
- *       200:
- *         description: Service bill data
- */
-router.get('/searchbill', serviceController.getServiceBill);
+// /**
+//  * @swagger
+//  * /service/searchbill:
+//  *   get:
+//  *     summary: Get service bill data
+//  *     tags: [Service]
+//  *     responses:
+//  *       200:
+//  *         description: Service bill data
+//  */
+// router.get('/searchbill', serviceController.getServiceBill);
 
 module.exports = router;
