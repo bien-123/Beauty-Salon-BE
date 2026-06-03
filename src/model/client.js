@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const clientSchema = new Schema(
     {
-        maKH: { type: String },
+        maKH: { type: String, unique: true },
         hoTen: { type: String },
         ngaySinh: { type: String },
         gioiTinh: { type: String },

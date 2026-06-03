@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const staffController = {
     getStaff: async (req, res) => {
         try {
-            const allStaffs = await Staff.find();
+            const allStaffs = await Staff.find({}).populate('khoa', 'departmentName');
             res.status(200).json(allStaffs);
         } catch (err) {
             res.status(500).json(err);
@@ -136,7 +136,9 @@ const staffController = {
                     { email: { $regex: query, $options: 'i' } },
                     { soDienThoai: { $regex: query, $options: 'i' } },
                 ],
-            }).sort({ updatedAt: -1 });
+            })
+                .populate('khoa', 'departmentName')
+                .sort({ updatedAt: -1 });
 
             // Xử lý kết quả trả về
             const arrResult = results.map((result) => ({

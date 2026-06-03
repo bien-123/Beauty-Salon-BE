@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const serviceSchema = new Schema(
     {
-        maDV: { type: String },
+        maDV: { type: String, unique: true },
         name: { type: String },
         description: { type: String },
         price: { type: String },

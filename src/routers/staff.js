@@ -29,24 +29,6 @@ router.post('/add', staffController.addStaff);
 
 /**
  * @swagger
- * /staff/updatePassword/{maNV}:
- *   put:
- *     summary: Update staff password
- *     tags: [Staff]
- *     parameters:
- *       - in: path
- *         name: maNV
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Password updated
- */
-router.put('/updatePassword/:maNV', staffController.updatePassword);
-
-/**
- * @swagger
  * /staff/update/{id}:
  *   put:
  *     summary: Update staff info
@@ -80,18 +62,6 @@ router.put('/update/:id', staffController.updateStaff);
  *         description: Staff deleted
  */
 router.delete('/delete/:id', staffController.deleteStaff);
-
-/**
- * @swagger
- * /staff/login:
- *   post:
- *     summary: Staff login
- *     tags: [Staff]
- *     responses:
- *       200:
- *         description: Login success
- */
-router.post('/login', staffController.loginStaff);
 
 /**
  * @swagger
@@ -135,4 +105,33 @@ router.get('/searchAccount', staffController.searchAccount);
  */
 router.get('/:maNV', staffController.getAStaff);
 
+/**
+ * @swagger
+ * /staff/login:
+ *   post:
+ *     summary: Staff login
+ *     tags: [Login]
+ *     responses:
+ *       200:
+ *         description: Login success
+ */
+router.post('/login', staffController.loginStaff);
+
+/**
+ * @swagger
+ * /staff/updatePassword/{maNV}:
+ *   put:
+ *     summary: Update staff password
+ *     tags: [Login]
+ *     parameters:
+ *       - in: path
+ *         name: maNV
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Password updated
+ */
+router.put('/updatePassword/:maNV', staffController.updatePassword);
 module.exports = router;
